@@ -2,7 +2,7 @@
 import click
 from scapy.all import srp, Ether, ARP, conf
 import logging
-import re
+import ipaddress
 
 logging.getLogger("scapy").setLevel(logging.CRITICAL)
 conf.verb = 0
@@ -10,8 +10,6 @@ conf.verb = 0
 @click.group()
 def arp_scan():
     pass
-
-import ipaddress
 
 def valid_cidr(s: str) -> bool:
     try:
